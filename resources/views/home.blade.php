@@ -12,7 +12,9 @@
         <ul>
             <li><a href="{{url('/about')}}">About me</a></li>
             <li><a href="{{url('/contact')}}">Contact me</a></li>
-            <li><a href="{{url('/showLoginForm')}}">Login</a></li>
+            <li><a href="{{url('/login')}}">Login</a></li>
+            <li><a href="{{url('/register')}}">Register</a></li>
+
 
         </ul>
     </nav>

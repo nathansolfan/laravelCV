@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController\LoginController;
+use App\Http\Controllers\AuthController\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -17,8 +18,11 @@ Route::get('/contact', [PageController::class, 'contact']);
 // Auth Controller
 // show form
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
 // handle login form submission
 Route::post('/login', [LoginController::class, 'login']);
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// handle register form submission
+Route::post('/register', [RegisterController::class, 'register']);
