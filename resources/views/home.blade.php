@@ -14,8 +14,16 @@
             <li><a href="{{url('/contact')}}">Contact me</a></li>
             <li><a href="{{url('/login')}}">Login</a></li>
             <li><a href="{{url('/register')}}">Register</a></li>
-
-
+            @if (Auth::check())
+            <li>
+                <form id="logout-form" action="{{ route('logout')}}" method="POST" style="display: none">
+                    @csrf
+                </form>
+                <a href="{{route('logout')}}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout</a>
+            </li>
+            @endif
         </ul>
     </nav>
 </body>
