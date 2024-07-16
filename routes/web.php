@@ -32,4 +32,5 @@ Route::post('/register', [RegisterController::class, 'register']);
 // USER
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
+    Route::put('/profile', [UserController::class, 'update'])->name('profile.update');
 });
