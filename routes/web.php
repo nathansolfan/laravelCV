@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController\LoginController;
 use App\Http\Controllers\AuthController\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 // STANDARD LAYOUT
 // Route::get('/', function () {
@@ -26,3 +27,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // handle register form submission
 Route::post('/register', [RegisterController::class, 'register']);
+
+
+// USER
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [UserController::class, 'show'])->name('profile');
+});
