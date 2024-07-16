@@ -25,7 +25,7 @@ class LoginController extends Controller
         // Try log
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // if ok
-            return redirect()->itended('/home');
+            return redirect()->intended('/home');
         }
 
         // if not ok

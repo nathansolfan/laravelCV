@@ -12,6 +12,8 @@
         <ul>
             <li><a href="{{url('/about')}}">About me</a></li>
             <li><a href="{{url('/contact')}}">Contact me</a></li>
+            <li><a href="{{url('/showLoginForm')}}">Login</a></li>
+
         </ul>
     </nav>
 </body>
